@@ -7,6 +7,10 @@ defmodule HochfuenfWeb.Secure do
   A Plug to make sure that a user is present. Halts the plug chain otherwise
   """
 
+  def init(conn) do
+    conn
+  end
+
   @doc false
   def call(conn, _params) do
     user = get_session(conn, :current_user)

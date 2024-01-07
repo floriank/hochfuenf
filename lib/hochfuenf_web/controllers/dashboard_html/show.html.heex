@@ -1,1 +1,12 @@
 <.flash_group flash={@flash} />
+<dl>
+  <dt>Name</dt>
+  <dd><%= @current_user.name %></dd>
+  <dt>Email</dt>
+  <dd><%= @current_user.email %></dd>
+  <dt>Avatar</dt>
+  <dd><img src={@current_user.avatar} width="50" /></dd>
+</dl>
+
+<.link href={~p"/logout"}>Logout</.link>
+
