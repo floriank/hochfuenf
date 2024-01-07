@@ -1,5 +1,14 @@
 # Hochfuenf
 
+This is a small application that aims to provide a FOSS alternative to tools
+like [15Five](https://15five.com). It's also a way for me to learn and reason
+around authentication with common IDPs (such as [Okta](https://okta.com), 
+[OneLogin](https://onelogin.com), etc.) in an Elixir context.
+
+Ultimately, this should be provide an easy way for groups of people to tell 
+each other that they did good work an are appreciated, in a manner that is 
+transparent and traceable.
+
 ## Getting started with development
 
 This project is a [Phoenix Project, using Elixir](https://phoenixframework.org).
