@@ -20,7 +20,18 @@ config :hochfuenf, HochfuenfWeb.Endpoint,
     layout: false
   ],
   pubsub_server: Hochfuenf.PubSub,
+  # TODO: override this salt in production contexts
   live_view: [signing_salt: "/lRbbPVI"]
+
+config :ueberauth, UeberAuth,
+  providers: [
+    auth0: {UeberAuth.Strategy.Auth0, []}
+  ]
+
+config :ueberauth, UeberAuth.Stragegy.Auth0.OAuth,
+  domain: System.get_env("AUTH0_DOMAIN"),
+  client_id: System.get_env("AUTH0_CLIENT_ID"),
+  client_secret: System.get_env("AUTH0_CLIENT_SECRET")
 
 # Configures the mailer
 #
