@@ -1,7 +1,7 @@
 defmodule HochfuenfWeb.DashboardController do
   use HochfuenfWeb, :controller
 
-  def show(conn, params) do
+  def show(conn, _params) do
     render(conn, :show)
   end
 end

@@ -9,6 +9,12 @@ Ultimately, this should be provide an easy way for groups of people to tell
 each other that they did good work and are appreciated, in a manner that is 
 transparent and traceable.
 
+## Supported Authentication providers
+
+* [Auth0](https://auth0.com)
+
+See [PROVIDERS.md](./PROVIDERS.md) to see additional setup instructions for SSO.
+
 ## Getting started with development
 
 This project is a [Phoenix Project, using Elixir](https://phoenixframework.org).
