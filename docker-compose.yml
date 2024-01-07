@@ -14,12 +14,15 @@ services:
     ports:
       - "4000:4000"
     env_file:
+        - .env
         - .envrc
+
     depends_on:
       - postgres
   postgres:
     image: postgres:16
     env_file: 
+      - .env
       - .envrc
     volumes:
       - data:/var/lib/postgresql/data

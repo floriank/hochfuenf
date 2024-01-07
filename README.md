@@ -6,7 +6,7 @@ around authentication with common IDPs (such as [Okta](https://okta.com),
 [OneLogin](https://onelogin.com), etc.) in an Elixir context.
 
 Ultimately, this should be provide an easy way for groups of people to tell 
-each other that they did good work an are appreciated, in a manner that is 
+each other that they did good work and are appreciated, in a manner that is 
 transparent and traceable.
 
 ## Getting started with development
@@ -23,6 +23,9 @@ $ cp .envrc.example .envrc
 # if you use dotenv
 $ cp .env.example .env
 ```
+
+just to make sure you have the env variables set locally (the `.env` file gets used
+in the `docker` setup.
 
 ### Docker setup [recommended]
 

@@ -18,6 +18,7 @@ usage:
 	@echo "  * iex              - Fire up a iex console inside of your container"
 	@echo "  * format           - Run the Elixir code formatter"
 	@echo "  * check-formatted  - Check whether all Elixir code is formatted"
+	@echo "  * clean            - Cleanup files [destructive]"
 	@echo "  * up               - Run the development server"
 	@echo "  * down             - Remove containers and tear down the setup"
 	@echo "  * stop             - Stop the development server"
@@ -36,8 +37,13 @@ reset: stop up
 
 reset-hard: down setup up
 
+clean:
+	rm -rf config/dev.exs config/prod.exs .envrc .env
+
 dev-config:
-	@test -f $(DEV_CONFIG_FILE) || (echo "Run 'cp $(DEV_CONFIG_FILE).sample $(DEV_CONFIG_FILE)' first!" && exit 1)
+	@cp -n config/dev.exs.sample config/dev.exs
+	@cp -n .env.example .env
+	@cp -n .envrc.example .envrc
 	rsync --ignore-existing config/dev.exs.sample config/dev.exs
 build:
 	$(call dc, build)
