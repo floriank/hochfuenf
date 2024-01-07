@@ -3,12 +3,12 @@ defmodule Hochfuenf.Repo.Migrations.CreateUsers do
 
   def change do
     create table(:users) do
-      add :name, :string
+      add :name, :string, null: false
       add :avatar, :string
-      add :email, :string
+      add :email, :string, null: false
 
-      add :external_id, :string
-      add :provider, :string
+      add :external_id, :string, null: false
+      add :provider, :string, null: false
 
       timestamps(type: :utc_datetime)
     end

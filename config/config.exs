@@ -25,13 +25,19 @@ config :hochfuenf, HochfuenfWeb.Endpoint,
 
 config :ueberauth, Ueberauth,
   providers: [
-    auth0: {Ueberauth.Strategy.Auth0, []}
+    auth0: {Ueberauth.Strategy.Auth0, []},
+    okta: {Ueberauth.Strategy.Okta, []}
   ]
 
 config :ueberauth, Ueberauth.Strategy.Auth0.OAuth,
   domain: System.get_env("AUTH0_DOMAIN"),
   client_id: System.get_env("AUTH0_CLIENT_ID"),
   client_secret: System.get_env("AUTH0_CLIENT_SECRET")
+
+config :ueberauth, Ueberauth.Strategy.Okta.OAuth,
+  site: System.get_env("OKTA_DOMAIN"),
+  client_id: System.get_env("OKTA_CLIENT_ID"),
+  client_secret: System.get_env("OKTA_CLIENT_SECRET")
 
 # Configures the mailer
 #

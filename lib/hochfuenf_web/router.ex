@@ -24,8 +24,12 @@ defmodule HochfuenfWeb.Router do
     get "/logout", AuthController, :logout
   end
 
+  pipeline :auth do
+    plug Ueberauth
+  end
+
   scope "/auth", HochfuenfWeb do
-    pipe_through :browser
+    pipe_through [:browser, :auth]
 
     get "/:provider", AuthController, :request
     get "/:provider/callback", AuthController, :callback

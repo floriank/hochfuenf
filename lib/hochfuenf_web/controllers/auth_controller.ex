@@ -1,7 +1,12 @@
 defmodule HochfuenfWeb.AuthController do
   use HochfuenfWeb, :controller
-  alias HochFuenf.Accounts
-  plug Ueberauth
+
+  alias Ueberauth.Strategy.Helpers
+
+  def request(conn, _params) do
+    Helpers.request_path(conn) |> IO.inspect()
+    conn
+  end
 
   def callback(%{assigns: %{ueberauth_failure: _fails}} = conn, _params) do
     conn
@@ -24,7 +29,7 @@ defmodule HochfuenfWeb.AuthController do
     end
   end
 
-  def logout(conn, params) do
+  def logout(conn, _params) do
     conn
     |> put_flash(:info, "You've been logged out")
     |> configure_session(drop: true)

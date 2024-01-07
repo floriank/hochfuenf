@@ -11,8 +11,8 @@ defmodule Hochfuenf.Accounts do
   alias Ueberauth.Auth
 
   def find_or_create(%Auth{
-        uid: uid,
         provider: :auth0,
+        uid: uid,
         info: %Auth.Info{name: name, email: email, image: image}
       }) do
     case get_user_by_email(email) do
@@ -33,6 +33,29 @@ defmodule Hochfuenf.Accounts do
 
       _ ->
         {:error, "Something went wrong!"}
+    end
+  end
+
+  def find_or_create(%Auth{
+        provider: :okta,
+        uid: uid,
+        info: %Auth.Info{name: name, email: email, image: image}
+      }) do
+    case get_user_by_email(email) do
+      nil ->
+        user =
+          create_user(%{
+            email: email,
+            name: name,
+            external_id: uid,
+            provider: "okta",
+            avatar: image
+          })
+
+        {:ok, user}
+
+      %User{provider: "okta"} = user ->
+        {:ok, user}
     end
   end
 

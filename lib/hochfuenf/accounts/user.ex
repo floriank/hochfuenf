@@ -16,6 +16,6 @@ defmodule Hochfuenf.Accounts.User do
   def changeset(user, attrs) do
     user
     |> cast(attrs, [:name, :avatar, :email, :provider, :external_id])
-    |> validate_required([:name, :avatar, :email, :provider, :external_id])
+    |> validate_required([:name, :email, :provider, :external_id])
   end
 end
