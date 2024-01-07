@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  dev:
+    build:
+      context: .
+      target: dev
+    stdin_open: true
+    user: ${USER_ID}:${GROUP_ID}
+    tty: true
+    command: ./bin/start_dev_server
+    volumes:
+      - .:/app
+    ports:
+      - "4000:4000"
+    env_file:
+        - .envrc
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:16
+    env_file: 
+      - .envrc
+    volumes:
+      - data:/var/lib/postgresql/data
+volumes:
+  data:
