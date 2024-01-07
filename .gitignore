@@ -35,3 +35,7 @@ hochfuenf-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# local asdf stuff
+.hex
+.cache
+.mix
