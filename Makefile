@@ -25,13 +25,13 @@ usage:
 	@echo "  * status           - see the current status of the development server"
 	@echo "  * test             - Run tests"
 	@echo "  * test-watch       - Observe files and run tests on changes"
-	@echo "  * reset       			- Reset the development server"
+	@echo "  * reset       		- Reset the development server"
 	@echo "  * reset-hard       - Rebuild all the things, restart"
 
 
 .PHONY: test
 
-setup: dev-config build hex-deps
+setup: dev-config build hex-deps db
 
 reset: stop up
 
@@ -70,3 +70,5 @@ test:
 	$(call dc-run, mix test)
 test-watch:
 	$(call dc-run, mix test.watch)
+db:
+	$(call dc-run, mix do ecto.setup + ecto.migrate)

@@ -4,7 +4,7 @@ import Config
 config :hochfuenf, Hochfuenf.Repo,
   username: "postgres",
   password: "postgres",
-  hostname: "localhost",
+  hostname: "postgres",
   database: "hochfuenf_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,

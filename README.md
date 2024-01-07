@@ -34,8 +34,8 @@ in the `docker` setup.
 - `docker`
 - `docker compose`
 
-Run `make` and follow the instructions. For a quick setup, run `make setup`, followed
-by make start.
+Run `make` and follow the instructions. For a quick setup, run `make  clean setup`, followed
+by `make up`.
 
 ### Locally
 
