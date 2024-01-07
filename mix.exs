@@ -34,6 +34,9 @@ defmodule Hochfuenf.MixProject do
     [
       {:phoenix, "~> 1.7.10"},
       {:phoenix_ecto, "~> 4.4"},
+      {:ueberauth, "~> 0.10"},
+      {:ueberauth_auth0, "~> 2.1"},
+      {:ueberauth_okta, "~> 1.1"},
       {:ecto_sql, "~> 3.10"},
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 3.3"},
