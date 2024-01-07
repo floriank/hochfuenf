@@ -2,9 +2,18 @@
 
 ## Getting started with development
 
-This project is a [Phoenix Project, using Elixir](https://phoenixframework.org). 
-You can run it locally with a PostgreSQL database or you can run it with the 
+This project is a [Phoenix Project, using Elixir](https://phoenixframework.org).
+You can run it locally with a PostgreSQL database or you can run it with the
 dev setup included.
+
+Regardless of which option you choose, you probably want to run
+
+```shell
+# if you use direnv
+$ cp .envrc.example .envrc
+# if you use dotenv
+$ cp .env.example .env
+```
 
 ### Docker setup [recommended]
 
