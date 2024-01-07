@@ -47,3 +47,5 @@ npm-debug.log
 # environment files (different whether you use .env or .envrc)
 .envrc
 .env
+
+.bash_history
